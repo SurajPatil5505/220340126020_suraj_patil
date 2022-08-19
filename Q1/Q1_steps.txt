@@ -1,0 +1,15 @@
+Steps :
+
+1) open postman in linux.
+
+2) In firefox open ThingsBoard.cloud and signin into thingsboard.
+
+3) In ThingsBoard a devices create select add new device and after that in credential part type the token for the device management
+
+4) After that in postman using post request in body->raw->json type the given payload
+
+5) And in postman type the url of thingsboard for verifying and post the payload for to access the data in thingsboard
+
+6) This is the url which is post for postman https://demo.thingsboard.io/api/v1/exxam/telemetry.
+
+7) Send payload to thingsboard.
