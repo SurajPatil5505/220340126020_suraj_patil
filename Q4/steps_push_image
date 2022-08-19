@@ -1,0 +1,6 @@
+steps to push image in Docker hub:
+
+1) login in Docker hub:
+2) In docker hub there has my existing repository name is suraj_diot22.
+
+3) enter command :docker push surajp5505/suraj_diot22:sqaure_num in terminal.

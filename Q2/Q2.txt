@@ -1,0 +1,28 @@
+Steps to create EC2(elastic computing) on AWS cloud :
+
+1) Login into AWS console.
+2) Searched Ec2 in search bar 
+3) Select EC2 sevice.
+4) Checked Availability Zones and check status in service health.
+5) Launched an instance 
+6) Given the Name and Tag : My_AWS_server.
+7) Selected Ubuntu-20.04LTS(HVM) free tier.
+8) created key pair login as : Diot22_batch. and certificate is generated.
+9) Set default network setting.
+10) set default configure storage.
+11) lauched Ec2 instance on Aws .
+12) Comes in Ec2 Dashboard and check ruunig instance and select it.
+13) selected EC2 instance created and comes in security and select security group .
+14) in security group  select inbound rules and edit inbound rule.
+15) in inbound rule add rule and select type custom TCP and selct port range 1883 and save rule.
+16) After successfuly configuration of all things checked public ip which is 34.222.166.160.
+17) finally from local host first change chmod 400 of key_pair certificate which is is download dir.
+18) Access the Ec2 instance from my local host machine by ssh -i "Diot22_batch.pem" ubuntu@ec2-34-222-166-160.us-west-2.compute.amazonaws.com.
+19) Now use the following command to run the broker with the custom conf file
+    /usr/sbin/mosquitto -c mosq.conf
+20) In local host terminal type the following command:
+    mosquitto_sub -t "topic" -h "34.222.166.160" -p 1883
+21) Open a new terminal and run the below command
+    mosquitto_pub -t "topic" -h "instance_public_ip" -p 1883 -m "temperature : 45"
+22) The connection is correct then you will be able to see the data in the mosquitto_sub terminal
+   
